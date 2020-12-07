@@ -124,7 +124,7 @@ impl<Iter> StringReader<Iter>
                             self.eat_char();
                             self.eat_char();
                         },
-                        Some(_) => { self.eat_char(); },
+                        Some(_) => { return Ok(()); },
                         None => return Err(self.error(ErrorCode::TrailingCharacters)), //todo
                     }
                 }
